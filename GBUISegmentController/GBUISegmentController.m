@@ -1,9 +1,9 @@
-/*!
+/*
  *  @file GBUISegmentController.m
  *  @brief Medocs
  *
  *  Created by @author George Boumis
- *  @date 19/5/13.
+ *  @date 2013/5/19.
  *  @copyright   Copyright (c) 2013 George Boumis <developer.george.boumis@gmail.com>. All rights reserved.
  */
 
@@ -222,6 +222,8 @@
 		if (!self.isViewLoaded)
 			[self loadView];
 		
+		UIViewController *previouslySelectedViewController = _selectedViewController;
+		NSInteger previouslySelectedViewControllerIndex = _selectedIndex;
 		/* We are setting all the controllers so remove the selected one */
 		[self removeSelectedViewController];
 		
@@ -263,6 +265,16 @@
 		
 		/* Selected index by default 0 */
 		_selectedIndex = 0;
+		
+		/* Re-select the last selected controller if present in the current view controllers array or the same index */
+		if (nil!=previouslySelectedViewController) {
+			NSInteger previouslySelectedViewControllerCurrentIndex = [_viewControllers indexOfObject:previouslySelectedViewController];
+			if (previouslySelectedViewControllerCurrentIndex!=NSNotFound)
+				_selectedIndex = previouslySelectedViewControllerCurrentIndex;
+			else if (previouslySelectedViewControllerIndex < _viewControllers.count)
+				_selectedIndex = previouslySelectedViewControllerIndex;
+		}
+		
 		_segmentedControl.selectedSegmentIndex = _selectedIndex;
 		_selectedViewController = _viewControllers[_selectedIndex];
 		
@@ -395,6 +407,7 @@
 	
 	if (![_viewControllers containsObject:selectedViewController]) {
 		NSAssert(NO, @"The selected view controller does not exist");
+		[NSException raise:NSInvalidArgumentException format:@"-[%@ %@] only a view controller in the segment controller's list of view controllers can be selected.", self.class, NSStringFromSelector(_cmd)];
 		return;
 	}
 	

@@ -3,7 +3,7 @@
  *  @brief Medocs
  *
  *  Created by @author George Boumis
- *  @date 19/5/13.
+ *  @date 2013/5/19.
  *  @copyright   Copyright (c) 2013 George Boumis <developer.george.boumis@gmail.com>. All rights reserved.
  */
 
