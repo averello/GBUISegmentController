@@ -159,3 +159,4 @@ xcuserdata
 
 doc/html
 doc/Doxyfile.warnings
+*.xcodeproj/project.xcworkspace/xcshareddata/*.xccheckout

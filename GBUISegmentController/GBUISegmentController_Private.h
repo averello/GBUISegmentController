@@ -8,7 +8,7 @@
  *  @copyright   Copyright (c) 2013 George Boumis <developer.george.boumis@gmail.com>. All rights reserved.
  */
 
-#import "GBUISegmentController.h"
+#import "GBUISegmentController/GBUISegmentController.h"
 
 @interface GBUISegmentController ()
 @property (nonatomic, strong) UIToolbar *topToolbar;

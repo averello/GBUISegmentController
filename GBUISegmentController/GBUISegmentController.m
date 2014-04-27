@@ -156,6 +156,10 @@
 	}
 }
 
+- (UIStatusBarStyle)preferredStatusBarStyle {
+	return UIStatusBarStyleDefault;
+}
+
 #pragma mark - constrains
 
 - (NSArray *)constrainsForSubviews  {

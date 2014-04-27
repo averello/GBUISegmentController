@@ -16,6 +16,8 @@
 		DE2319B31846AFF200ABA5BF /* GBUISegmentControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2319B21846AFF200ABA5BF /* GBUISegmentControllerTests.m */; };
 		DE2319C21846B00100ABA5BF /* GBUIBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2319BD1846B00100ABA5BF /* GBUIBadgeView.m */; };
 		DE2319C31846B00100ABA5BF /* GBUISegmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2319C11846B00100ABA5BF /* GBUISegmentController.m */; };
+		DE50BDDB190D61A900E57C52 /* GBUISegmentController.h in Headers */ = {isa = PBXBuildFile; fileRef = DE2319C01846B00100ABA5BF /* GBUISegmentController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DEF0F8AE190D647300ECFAE3 /* GBUISegmentController_Private.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DE2319BE1846B00100ABA5BF /* GBUISegmentController_Private.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,9 +34,10 @@
 		DE2319911846AFF100ABA5BF /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "include/$(PRODUCT_NAME)";
+			dstPath = "include/$(PRODUCT_NAME)/private";
 			dstSubfolderSpec = 16;
 			files = (
+				DEF0F8AE190D647300ECFAE3 /* GBUISegmentController_Private.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -154,6 +157,17 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		DEF0F8AC190D642900ECFAE3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE50BDDB190D61A900E57C52 /* GBUISegmentController.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		DE2319921846AFF100ABA5BF /* GBUISegmentController */ = {
 			isa = PBXNativeTarget;
@@ -162,6 +176,7 @@
 				DE23198F1846AFF100ABA5BF /* Sources */,
 				DE2319901846AFF100ABA5BF /* Frameworks */,
 				DE2319911846AFF100ABA5BF /* CopyFiles */,
+				DEF0F8AC190D642900ECFAE3 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -196,7 +211,7 @@
 		DE23198B1846AFF100ABA5BF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "George Boumis <developer.george.boumis@gmail.com>";
 			};
 			buildConfigurationList = DE23198E1846AFF100ABA5BF /* Build configuration list for PBXProject "GBUISegmentController" */;
@@ -272,7 +287,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -310,7 +324,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -365,7 +378,6 @@
 		DE2319BA1846AFF200ABA5BF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -386,7 +398,6 @@
 		DE2319BB1846AFF200ABA5BF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
