@@ -9,7 +9,7 @@
  *  @defgroup sc
  */
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @class GBUISegmentController;
 /*!

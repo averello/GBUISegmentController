@@ -7,9 +7,9 @@
  *  @copyright   Copyright (c) 2013 George Boumis <developer.george.boumis@gmail.com>. All rights reserved.
  */
 
-#import "GBUIBadgeView.h"
-#import <QuartzCore/QuartzCore.h>
+@import QuartzCore;
 
+#import "GBUIBadgeView.h"
 #include <mach/mach_time.h>
 
 @interface GBUIBadgeView () {

@@ -16,7 +16,8 @@
 		DE2319B31846AFF200ABA5BF /* GBUISegmentControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2319B21846AFF200ABA5BF /* GBUISegmentControllerTests.m */; };
 		DE2319C21846B00100ABA5BF /* GBUIBadgeView.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2319BD1846B00100ABA5BF /* GBUIBadgeView.m */; };
 		DE2319C31846B00100ABA5BF /* GBUISegmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2319C11846B00100ABA5BF /* GBUISegmentController.m */; };
-		DE50BDDB190D61A900E57C52 /* GBUISegmentController.h in Headers */ = {isa = PBXBuildFile; fileRef = DE2319C01846B00100ABA5BF /* GBUISegmentController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE50BDDB190D61A900E57C52 /* GBUISegmentController.h in Headers */ = {isa = PBXBuildFile; fileRef = DE2319C01846B00100ABA5BF /* GBUISegmentController.h */; };
+		DECFD7FA190DC11C00CC2EEA /* GBUISegmentController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DE2319C01846B00100ABA5BF /* GBUISegmentController.h */; };
 		DEF0F8AE190D647300ECFAE3 /* GBUISegmentController_Private.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DE2319BE1846B00100ABA5BF /* GBUISegmentController_Private.h */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,16 @@
 			dstSubfolderSpec = 16;
 			files = (
 				DEF0F8AE190D647300ECFAE3 /* GBUISegmentController_Private.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DECFD7F9190DC10B00CC2EEA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				DECFD7FA190DC11C00CC2EEA /* GBUISegmentController.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +188,7 @@
 				DE2319901846AFF100ABA5BF /* Frameworks */,
 				DE2319911846AFF100ABA5BF /* CopyFiles */,
 				DEF0F8AC190D642900ECFAE3 /* Headers */,
+				DECFD7F9190DC10B00CC2EEA /* CopyFiles */,
 			);
 			buildRules = (
 			);

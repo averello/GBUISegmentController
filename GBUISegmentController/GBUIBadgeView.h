@@ -7,7 +7,7 @@
  *  @copyright   Copyright (c) 2013 George Boumis <developer.george.boumis@gmail.com>. All rights reserved.
  */
 
-#import <UIKit/UIKit.h>
+@import UIKit;
 
 @interface GBUIBadgeView : UILabel
 @property (nonatomic, strong) UIColor *strokeColor;
