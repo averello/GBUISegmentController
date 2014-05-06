@@ -40,14 +40,6 @@
     return self;
 }
 
-- (id)init {
-	self = [super init];
-    if (self) {
-		[self _init];
-    }
-    return self;
-}
-
 - (void)_init {
 	@autoreleasepool {
 		_options.minHeight = 15.0f;
@@ -79,19 +71,25 @@
 	mach_timebase_info(&info);
 	uint64_t drawStart = mach_absolute_time(), drawEnd;
 	
+	/* Get context */
 	CGContextRef context = UIGraphicsGetCurrentContext();
 
+	/* Set stroke and fill color */
 	CGContextSetFillColorWithColor(context, _fillColor.CGColor);
 	CGContextSetStrokeColorWithColor(context, _strokeColor.CGColor);
 	
+	/* Set different drawing properties, line width, cap, join */
 	CGContextSetLineWidth(context, _strokeSize);
 	CGContextSetLineCap(context, kCGLineCapRound);
 	CGContextSetLineJoin(context, kCGLineJoinRound);
+	
+	/* Insect the rect */
 	CGFloat inset = _strokeSize;
 	CGRect insetedRect = CGRectInset(rect, inset, inset);
 	CGRect insetedRect2 = CGRectInset(insetedRect, inset, inset);
 	
 	@autoreleasepool {
+		/* Draw the circle */
 		UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:insetedRect cornerRadius:CGRectGetHeight(insetedRect)/2.0f];
 		path.lineCapStyle = kCGLineCapRound;
 		path.lineJoinStyle = kCGLineJoinRound;
@@ -100,6 +98,7 @@
 		[path fill];
 		path = nil;
 
+		/* Draw the decoration */
 		path = [UIBezierPath bezierPathWithRoundedRect:insetedRect2 cornerRadius:CGRectGetHeight(insetedRect2)/2.0f];
 		path.lineCapStyle = kCGLineCapRound;
 		path.lineJoinStyle = kCGLineJoinRound;
@@ -108,7 +107,8 @@
 		[path stroke];
 		path = nil;
 	}
-		
+	
+	/* Draw the text */
 	CGContextSetFillColorWithColor(context, self.textColor.CGColor);
 	[self drawTextInRect:insetedRect];
 	
