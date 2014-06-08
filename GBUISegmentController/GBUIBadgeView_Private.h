@@ -9,10 +9,13 @@
 
 @import UIKit;
 
-@interface GBUIBadgeView : UILabel
+@interface GBUIBadgeView () {
+@protected
+	struct {
+		CGFloat minHeight;
+		CGFloat capHeightFactor;
+	} _options;
+}
 
-@property (nonatomic, strong) UIColor *strokeColor;
-@property (nonatomic, strong) UIColor *fillColor;
-@property (nonatomic, strong) UIColor *decorationColor;
-@property (nonatomic) CGFloat strokeSize;
+- (void)_init;
 @end

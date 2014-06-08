@@ -10,16 +10,8 @@
 @import QuartzCore;
 
 #import "GBUIBadgeView.h"
+#import "GBUIBadgeView_Private.h"
 #include <mach/mach_time.h>
-
-@interface GBUIBadgeView () {
-	@protected
-	struct {
-		CGFloat minHeight;
-		CGFloat capHeightFactor;
-	} _options;
-}
-@end
 
 @implementation GBUIBadgeView
 
@@ -62,18 +54,25 @@
 	}
 }
 
+
+#define LOG_TIME 0
+
 //*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
+#ifdef DEBUG 
+#if LOG_TIME
 	mach_timebase_info_data_t info;
 	mach_timebase_info(&info);
 	uint64_t drawStart = mach_absolute_time(), drawEnd;
+#endif
+#endif
 	
 	/* Get context */
 	CGContextRef context = UIGraphicsGetCurrentContext();
-
+	
 	/* Set stroke and fill color */
 	CGContextSetFillColorWithColor(context, _fillColor.CGColor);
 	CGContextSetStrokeColorWithColor(context, _strokeColor.CGColor);
@@ -97,7 +96,7 @@
 		[path stroke];
 		[path fill];
 		path = nil;
-
+		
 		/* Draw the decoration */
 		path = [UIBezierPath bezierPathWithRoundedRect:insetedRect2 cornerRadius:CGRectGetHeight(insetedRect2)/2.0f];
 		path.lineCapStyle = kCGLineCapRound;
@@ -112,6 +111,8 @@
 	CGContextSetFillColorWithColor(context, self.textColor.CGColor);
 	[self drawTextInRect:insetedRect];
 	
+#ifdef DEBUG
+#if	LOG_TIME
 	drawEnd = mach_absolute_time();
 	
 	long double elapsed = drawEnd - drawStart;
@@ -119,6 +120,8 @@
 	elapsed /= info.denom;
 	elapsed /= 1000000.0F;
 	NSLog(@"%@ %Lf miliseconds", NSStringFromSelector(_cmd), elapsed);
+#endif
+#endif
 }
 //*/
 
@@ -133,8 +136,14 @@
 		textSize.width = textSize.height;
 	else if (((NSInteger)textSize.width % 2) != 0)
 		textSize.width = floor(textSize.width + 1);
-//	NSLog(@"text size:%@ point size:%f cap height:%f", NSStringFromCGSize(textSize), self.font.pointSize, self.font.capHeight);
+#ifdef DEBUG
+#if LOG_TIME
+	NSLog(@"text size:%@ point size:%f cap height:%f", NSStringFromCGSize(textSize), self.font.pointSize, self.font.capHeight);
+#endif
+#endif
 	return textSize;
 }
+
+#undef print
 
 @end

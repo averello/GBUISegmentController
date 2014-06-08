@@ -18,6 +18,10 @@
 		DE2319C31846B00100ABA5BF /* GBUISegmentController.m in Sources */ = {isa = PBXBuildFile; fileRef = DE2319C11846B00100ABA5BF /* GBUISegmentController.m */; };
 		DE50BDDB190D61A900E57C52 /* GBUISegmentController.h in Headers */ = {isa = PBXBuildFile; fileRef = DE2319C01846B00100ABA5BF /* GBUISegmentController.h */; };
 		DECFD7FA190DC11C00CC2EEA /* GBUISegmentController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DE2319C01846B00100ABA5BF /* GBUISegmentController.h */; };
+		DEE30A94191FAC15009C7266 /* GBUIBadgeView.h in Headers */ = {isa = PBXBuildFile; fileRef = DE2319BC1846B00100ABA5BF /* GBUIBadgeView.h */; };
+		DEE30A95191FAC1C009C7266 /* GBUIBadgeView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DE2319BC1846B00100ABA5BF /* GBUIBadgeView.h */; };
+		DEE30A9D191FB2B8009C7266 /* GBUIBadgeView_Private.h in Headers */ = {isa = PBXBuildFile; fileRef = DEE30A9C191FB2B8009C7266 /* GBUIBadgeView_Private.h */; };
+		DEE30A9E191FB315009C7266 /* GBUIBadgeView_Private.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DEE30A9C191FB2B8009C7266 /* GBUIBadgeView_Private.h */; };
 		DEF0F8AE190D647300ECFAE3 /* GBUISegmentController_Private.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = DE2319BE1846B00100ABA5BF /* GBUISegmentController_Private.h */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +42,7 @@
 			dstPath = "include/$(PRODUCT_NAME)/private";
 			dstSubfolderSpec = 16;
 			files = (
+				DEE30A9E191FB315009C7266 /* GBUIBadgeView_Private.h in CopyFiles */,
 				DEF0F8AE190D647300ECFAE3 /* GBUISegmentController_Private.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,6 +53,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				DEE30A95191FAC1C009C7266 /* GBUIBadgeView.h in CopyFiles */,
 				DECFD7FA190DC11C00CC2EEA /* GBUISegmentController.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -71,6 +77,7 @@
 		DE2319C11846B00100ABA5BF /* GBUISegmentController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GBUISegmentController.m; sourceTree = "<group>"; };
 		DE2319C41846B21100ABA5BF /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		DE2319C51846B21100ABA5BF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		DEE30A9C191FB2B8009C7266 /* GBUIBadgeView_Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GBUIBadgeView_Private.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +137,7 @@
 		DE2319981846AFF100ABA5BF /* GBUISegmentController */ = {
 			isa = PBXGroup;
 			children = (
+				DEE30A9C191FB2B8009C7266 /* GBUIBadgeView_Private.h */,
 				DE2319BC1846B00100ABA5BF /* GBUIBadgeView.h */,
 				DE2319BD1846B00100ABA5BF /* GBUIBadgeView.m */,
 				DE2319BE1846B00100ABA5BF /* GBUISegmentController_Private.h */,
@@ -173,6 +181,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEE30A9D191FB2B8009C7266 /* GBUIBadgeView_Private.h in Headers */,
+				DEE30A94191FAC15009C7266 /* GBUIBadgeView.h in Headers */,
 				DE50BDDB190D61A900E57C52 /* GBUISegmentController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
